@@ -12,9 +12,14 @@ It is what represents the real-life entity in the system. An object is what we c
 the object performs the processing of the data to input a result or change the data. The object is an instance of the class.
 
 ![Descriptive alt text](https://br.pinterest.com/pin/91549804919389820/)
-# Main Object Oriented Programming concepts
+# Core concepts of Object Oriented Programming
 ## Ecapsulation:
 It is the process of hiding data from the user. Ecapsulation helps us to prevent that sensitive data is exposed unnecessarily. We can achieve encapsulation by using keywords, such as 'Private' or 'Protected'
 Ex.: private String name;
 
 ![encapsulation](https://www.enjoyalgorithms.com/blog/encapsulation-in-oops/)
+
+## Inheritance
+Inheritance is a way that we reuse the code in our system. This feature allow us to acquire attributes and methods from another class which allows to establish an hierarchical relationship beteween a Superclass and a Subclass.
+
+![inheritance](https://www.enjoyalgorithms.com/blog/inheritance-in-java/)
