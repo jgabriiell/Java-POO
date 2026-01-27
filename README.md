@@ -29,3 +29,8 @@ Ex.: private String name;
 Inheritance is a way that we reuse the code in our system. This feature allow us to acquire attributes and methods from another class which allows to establish an hierarchical relationship beteween a Superclass and a Subclass.
 
 ![inheritance](https://www.enjoyalgorithms.com/blog/inheritance-in-java/)
+
+## Polymorphism:
+It is the ability to process the same data in different ways. We can think of polymorphism as a man, who has different roles to play depending on the environment he is at that specific moment. The data can be processed differently accoding to the instance being used. 
+
+![polymorphism](https://www.linkedin.com/pulse/understanding-polymorphism-object-oriented-oop-kalana-heshan-hbffc)
