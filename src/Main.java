@@ -1,15 +1,44 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import entities.Contract;
+import entities.Installment;
+import services.ContractService;
+import services.PaypalService;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Locale.setDefault(Locale.US);
+        Scanner scanner = new Scanner(System.in);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        System.out.println("Enter the contract data: ");
+        System.out.print("Number: ");
+        int number = scanner.nextInt();
+
+        System.out.print("Date (dd/MM/yyyy): ");
+        LocalDate date = LocalDate.parse(scanner.next(), formatter);
+
+        System.out.print("Value of contract: ");
+        double totalValue = scanner.nextDouble();
+
+        Contract contract = new Contract(number, date, totalValue);
+
+        System.out.println("Enter the number of installments: ");
+        int numberOfInstallments = scanner.nextInt();
+
+        ContractService service = new ContractService(new PaypalService());
+
+        service.processContract(contract, numberOfInstallments);
+
+        System.out.print("Installments: ");
+        for (Installment installment: contract.getInstallments()) {
+            System.out.println(installment);
         }
+
+        scanner.close();
     }
 }
